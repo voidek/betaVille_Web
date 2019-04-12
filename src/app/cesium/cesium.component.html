@@ -1,34 +1,35 @@
-<div app-cesium>
-  <div class="backdrop" id="menu" style="visibility: hidden;">
+<div class="vertical-menu">
+
+	<div class="tool">
+		<input type="file" accept="model/gltf+json" #newModel (input)="add3dModelee(newModel.value)">
+	</div>
+</div>
+
+<div app-cesium></div>
+<div class="backdrop" id="menu">
     <span><strong>3d Model Transform</strong></span>
     <div id="transformationTools">
 
       <span><strong>Scale: {{scale}}</strong></span>
       <br>
-      <input type="range" min="0.1" step="0.1" max="10" value={{scale}} #scaler
+      <input type="range" min="0.001" step="0.001" max="1" value={{scale}} #scaler
              (input)="transformModelScale(scaler.value)">
       <br>
-
-      <span><strong>Rotation</strong></span>
+      <span><strong>Orientation: {{translation.orientation}}</strong></span>
       <br>
-      <span><strong>Orientation: {{orientation}}</strong></span>
+      <input type="range" min="-180" max="180" step="0.1" value={{translation.orientation}} #orienter (input)="transformModelOrientation(orienter.value)">
       <br>
-      <input type="range" min="0" max="360" value={{orientation}} #orienter
-             (input)="transformModelOrientation(orienter.value)">
+      <span><strong>Position (X): {{translation.x}}</strong></span>
       <br>
-      <span><strong>Position (X): {{position.x}}</strong></span>
+      <input type="range" min="-50" max="50" step="0.1" value={{translation.x}} #posX (input)="transformXPos(posX.value)">
       <br>
-      <input type="range" min="-100" max="100" value={{position.x}} #posX (input)="transformXPos(posX.value)">
+      <span><strong>Position (Y): {{translation.y}}</strong></span>
       <br>
-      <span><strong>Position (Y): {{position.y}}</strong></span>
+      <input type="range" min="-50" max="50" step="0.1" value={{translation.y}} #posY (input)="transformYPos(posY.value)">
       <br>
-      <input type="range" min="-100" max="100" value={{position.y}} #posY (input)="transformYPos(posY.value)">
+      <span><strong>Position (Z): {{translation.z}}</strong></span>
       <br>
-      <span><strong>Position (Z): {{position.z}}</strong></span>
-      <br>
-      <input type="range" min="0" max="20" value={{position.z}} #posZ (input)="transformZPos(posZ.value)">
+      <input type="range" min="0" max="5" step="0.1" value={{translation.z}} #posZ (input)="transformZPos(posZ.value)">
       <br>
     </div>
-  </div>
-
 </div>

@@ -1,0 +1,15 @@
+Go to :
+	- https://sketchfab.com/models?features=downloadable&sort_by=-likeCount
+	- https://free3d.com/
+	
+Download a free 3D model with the .obj extension : (maybe some other extension work but I didn't try with them)
+
+Go to :
+	- https://blackthread.io/gltf-converter/
+	- http://52.4.31.236/convertmodel.html
+
+Put the .obj and the .mtl into the website.
+
+Download the result (.glb or .gltf)
+
+Put this file in the src/assets folder
